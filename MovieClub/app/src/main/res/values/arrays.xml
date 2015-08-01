@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="movienames_array">
+        <item>Ant Man</item>
+        <item>Mission Impossible: Rogue Nation</item>
+        <item>Terminator: Genisys</item>
+        <item>Jurassic World</item>
+        <item>Fantastic Four</item>
+        <item>Entourage</item>
+        <item>Trainwreck</item>
+        <item>Minions</item>
+        <item>Ant Man</item>
+        <item>Mission Impossible: Rogue Nation</item>
+        <item>Terminator: Genisys</item>
+        <item>Jurassic World</item>
+        <item>Fantastic Four</item>
+        <item>Entourage</item>
+        <item>Trainwreck</item>
+        <item>Minions</item>
+    </string-array>
+</resources>
