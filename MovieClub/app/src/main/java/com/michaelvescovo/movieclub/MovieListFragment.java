@@ -1,32 +1,31 @@
 package com.michaelvescovo.movieclub;
 
-import android.app.FragmentManager;
 import android.app.ListFragment;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
+import android.view.ViewGroup;
+import android.widget.ListAdapter;
 
 /**
  * Created by michael on 1/08/15.
  */
-public class MovieListFragment extends ListFragment implements FragmentManager.OnBackStackChangedListener {
-
+public class MovieListFragment extends ListFragment {
     private static final String DEBUG_TAG = "MovieListFragment";
-    int mCurPosition = -1;
-    boolean mShowTwoFragments;
 
     @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        getListView().setChoiceMode(ListView.CHOICE_MODE_SINGLE);
-        String[] movieNames = getResources().getStringArray(R.array.movienames_array);
-        setListAdapter(new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_activated_1, movieNames));
-        //View detailsFrame = getActivity().findViewById(R.id.fieldentry);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.movie_list, container, false);
     }
 
     @Override
-    public void onBackStackChanged() {
+    public void setListAdapter(ListAdapter adapter) {
+        super.setListAdapter(adapter);
+
 
     }
+
+    /*setListAdapter(new ArrayAdapter<String>(getActivity(),
+    android.R.layout.simple_list_item_activated_1, fieldNotes));*/
 }
