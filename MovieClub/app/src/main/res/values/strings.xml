@@ -5,4 +5,5 @@
     <string name="hello_world_land">Hello world in landscape mode!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_movie_detail">Movie Details</string>
+    <string name="movie_title">MOVIE_TITLE</string>
 </resources>

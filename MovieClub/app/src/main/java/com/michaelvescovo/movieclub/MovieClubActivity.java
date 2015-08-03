@@ -1,12 +1,23 @@
 package com.michaelvescovo.movieclub;
 
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class MovieClubActivity extends AppCompatActivity {
+public class MovieClubActivity extends AppCompatActivity implements MovieListFragment.OnMovieSelectedListener {
     private static final String DEBUG_TAG = "MovieClubActivity";
+
+    @Override
+    public void onBackPressed() {
+        if (getFragmentManager().getBackStackEntryCount() != 0) {
+            getFragmentManager().popBackStack();
+        } else {
+            super.onBackPressed();
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,7 +25,7 @@ public class MovieClubActivity extends AppCompatActivity {
         setContentView(R.layout.movie_club_layout);
 
         // Check that the activity is using the layout version with the fragment_container_1 FrameLayout
-        if (findViewById(R.id.fragment_container_1) != null) {
+        if (findViewById(R.id.fragment_container_movie_list) != null) {
             // if restoring from a previous state simply return to avoid overlapping fragments
             if (savedInstanceState != null) {
                 return;
@@ -28,11 +39,11 @@ public class MovieClubActivity extends AppCompatActivity {
             movieListFragment.setArguments(getIntent().getExtras());
 
             // add the fragment to fragment_container_1 framelayout
-            getFragmentManager().beginTransaction().add(R.id.fragment_container_1, movieListFragment).commit();
+            getFragmentManager().beginTransaction().add(R.id.fragment_container_movie_list, movieListFragment).commit();
         }
 
         // Check that the activity is using the layout version with the fragment_container_2 FrameLayout
-        if (findViewById(R.id.fragment_container_2) != null) {
+        if (findViewById(R.id.fragment_container_movie_detail) != null) {
             // if restoring from a previous state simply return to avoid overlapping fragments
             if (savedInstanceState != null) {
                 return;
@@ -46,7 +57,7 @@ public class MovieClubActivity extends AppCompatActivity {
             movieDetailFragment.setArguments(getIntent().getExtras());
 
             // add the fragment to fragment_container_1 framelayout
-            getFragmentManager().beginTransaction().add(R.id.fragment_container_2, movieDetailFragment).commit();
+            getFragmentManager().beginTransaction().add(R.id.fragment_container_movie_detail, movieDetailFragment).commit();
         }
     }
 
@@ -70,5 +81,31 @@ public class MovieClubActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onMovieSelected(String movieName) {
+        if (findViewById(R.id.fragment_container_movie_detail) != null) {
+            // if this fragment is available then we're in the two-pane layout
+            MovieDetailFragment movieDetailFragment = (MovieDetailFragment) getFragmentManager().findFragmentById(R.id.fragment_container_movie_detail);
+            movieDetailFragment.displayMovie(movieName);
+
+            Log.i(DEBUG_TAG, movieName);
+        } else {
+            // we're in the one-pane layout and have to swap fragments
+            MovieDetailFragment newFragment = new MovieDetailFragment();
+            Bundle args = new Bundle();
+            final String KEY_NAME = getResources().getString(R.string.movie_title);
+
+            args.putString(KEY_NAME, movieName);
+            newFragment.setArguments(args);
+
+            FragmentTransaction transaction = getFragmentManager().beginTransaction();
+            // replace whatever is in the fragment container view with this fragment and
+            // add the transaction to the back stack so the user can navigate back
+            transaction.replace(R.id.fragment_container_movie_list, newFragment);
+            transaction.addToBackStack(null);
+            transaction.commit();
+        }
     }
 }
