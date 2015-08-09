@@ -6,4 +6,8 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_movie_detail">Movie Details</string>
     <string name="movie_title">MOVIE_TITLE</string>
+    <string name="title_fragment_movie_club">Welcome to the Android Movie Club</string>
+    <string name="title_activity_movie_club">Movie Club</string>
+    <string name="title_activity_test">TestActivity</string>
+    <string name="title_activity_view_movies">View Movies</string>
 </resources>

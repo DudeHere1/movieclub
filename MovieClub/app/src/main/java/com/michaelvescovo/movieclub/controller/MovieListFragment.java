@@ -1,4 +1,4 @@
-package com.michaelvescovo.movieclub;
+package com.michaelvescovo.movieclub.controller;
 
 import android.app.Activity;
 import android.app.ListFragment;
@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import com.michaelvescovo.movieclub.R;
 
 /**
  * Created by michael on 1/08/15.

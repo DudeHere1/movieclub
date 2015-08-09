@@ -1,4 +1,4 @@
-package com.michaelvescovo.movieclub;
+package com.michaelvescovo.movieclub.controller;
 
 import android.app.Fragment;
 

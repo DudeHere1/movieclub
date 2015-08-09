@@ -1,4 +1,4 @@
-package com.michaelvescovo.movieclub;
+package com.michaelvescovo.movieclub.controller;
 
 import android.app.FragmentTransaction;
 import android.os.Bundle;
@@ -7,8 +7,16 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class MovieClubActivity extends AppCompatActivity implements MovieListFragment.OnMovieSelectedListener {
-    private static final String DEBUG_TAG = "MovieClubActivity";
+import com.michaelvescovo.movieclub.R;
+import com.michaelvescovo.movieclub.model.Movie;
+
+import java.util.ArrayList;
+
+public class ViewMoviesActivity extends AppCompatActivity implements MovieListFragment.OnMovieSelectedListener {
+    private static final String DEBUG_TAG = "ViewMoviesActivity";
+    private ArrayList<Movie> movies = new ArrayList<Movie>();
+    private String[] movieTitleList;
+    private Movie selectedMovie = null;
 
     @Override
     public void onBackPressed() {
@@ -22,7 +30,14 @@ public class MovieClubActivity extends AppCompatActivity implements MovieListFra
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.movie_club_layout);
+        setContentView(R.layout.view_movies_layout);
+
+        // trying to add all the movies into memory
+        movieTitleList = getResources().getStringArray(R.array.movienames_array);
+
+        for (int i = 0; i < movieTitleList.length; i++) {
+            movies.add(new Movie(movieTitleList[i]));
+        }
 
         // Check that the activity is using the layout version with the fragment_container_1 FrameLayout
         if (findViewById(R.id.fragment_container_movie_list) != null) {
@@ -85,12 +100,20 @@ public class MovieClubActivity extends AppCompatActivity implements MovieListFra
 
     @Override
     public void onMovieSelected(String movieName) {
+        for (int i = 0; i < movieTitleList.length; i++) {
+            if (movies.get(i).getTitle().toString() == movieName) {
+                selectedMovie = movies.get(i);
+                Log.i(DEBUG_TAG, movieName);
+                break;
+            }
+        }
+
         if (findViewById(R.id.fragment_container_movie_detail) != null) {
             // if this fragment is available then we're in the two-pane layout
             MovieDetailFragment movieDetailFragment = (MovieDetailFragment) getFragmentManager().findFragmentById(R.id.fragment_container_movie_detail);
             movieDetailFragment.displayMovie(movieName);
 
-            Log.i(DEBUG_TAG, movieName);
+
         } else {
             // we're in the one-pane layout and have to swap fragments
             MovieDetailFragment newFragment = new MovieDetailFragment();
