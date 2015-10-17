@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Card dimensions-->
+    <dimen name="card_layout_width">400dp</dimen>
+    <dimen name="card_layout_height">370dp</dimen>
+
+    <!-- Movie image sizes-->
+    <dimen name="MovieImageWidth">200dp</dimen>
+    <dimen name="MovieImageHeight">297dp</dimen>
+</resources>

@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <item name="view_movies_layout" type="layout">@layout/view_movies_twopanes</item>
-    <bool name="has_two_panes">true</bool>
-</resources>
