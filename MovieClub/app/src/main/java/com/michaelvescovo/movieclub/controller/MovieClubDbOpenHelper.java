@@ -4,6 +4,9 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import static com.michaelvescovo.movieclub.model.MovieClubDbContract.MovieEntry.SQL_CREATE_ENTRIES;
+import static com.michaelvescovo.movieclub.model.MovieClubDbContract.MovieEntry.SQL_DELETE_ENTRIES;
+
 /**
  * Michael Vescovo
  * s3459317

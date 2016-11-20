@@ -5,9 +5,7 @@
     android:layout_width="@dimen/card_layout_width"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
-    android:layout_margin="8dp"
-    card_view:cardCornerRadius="4dp"
-    card_view:contentPadding="4dp">
+    android:layout_margin="8dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -15,14 +13,12 @@
 
         <TextView
             android:id="@+id/movie_preview_title"
-            style="@style/Title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp" />
 
         <TextView
             android:id="@+id/movie_preview_year"
-            style="@style/Subhead"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@id/movie_preview_title"
@@ -41,12 +37,10 @@
                 android:layout_height="163dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:contentDescription="@string/movie_poster_caption"
                 android:scaleType="centerCrop" />
 
             <TextView
                 android:id="@+id/movie_preview_short_plot"
-                style="@style/Body1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
@@ -56,7 +50,6 @@
 
             <TextView
                 android:id="@+id/movie_preview_invitees"
-                style="@style/Body1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/movie_preview_short_plot"

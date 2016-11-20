@@ -5,6 +5,7 @@ import android.media.Image;
 import android.util.Log;
 
 import com.michaelvescovo.movieclub.R;
+import com.michaelvescovo.movieclub.model.interfaces.Movie;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -13,7 +14,7 @@ import java.util.Date;
  * Created by michael on 9/08/15.
  * MovieImpl object class
  */
-public class MovieImpl implements Serializable, MovieInterface {
+public class MovieImpl implements Serializable, Movie {
     private static final String DEBUG_TAG = "MovieImpl";
 
     // not editable by user

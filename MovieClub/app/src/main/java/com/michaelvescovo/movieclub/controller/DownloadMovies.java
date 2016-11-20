@@ -37,7 +37,7 @@ public class DownloadMovies {
     public DownloadMovies(Fragment fragment, LoaderManager.LoaderCallbacks loaderCallbacks) {
         mFragment = fragment;
         mLoaderCallbacks = loaderCallbacks;
-        mQueue = Volley.newRequestQueue(mFragment.getContext());
+        mQueue = Volley.newRequestQueue(mFragment.getActivity());
     }
 
 

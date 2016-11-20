@@ -3,7 +3,8 @@ package com.michaelvescovo.movieclub.controller;
 import android.text.Editable;
 import android.text.TextWatcher;
 
-import com.michaelvescovo.movieclub.model.DataHolder;
+import com.michaelvescovo.movieclub.model.Memory;
+
 
 /**
  * Created by michael on 28/08/15.
@@ -29,6 +30,6 @@ public class LocationWatcher implements TextWatcher {
 
     @Override
     public void afterTextChanged(Editable s) {
-        DataHolder.getDataHolder().getMovieArrayList().get(mPosition).setVenue(s.toString());
+//        Memory.getDataHolder().getMovieArrayList().get(mPosition).setVenue(s.toString());
     }
 }

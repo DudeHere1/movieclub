@@ -12,7 +12,6 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.michaelvescovo.movieclub.R;
-import com.michaelvescovo.movieclub.model.DataHolder;
 
 /**
  * Created by michael on 1/08/15.

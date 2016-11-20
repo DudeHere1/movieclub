@@ -23,7 +23,7 @@ public final class MovieClubDbContract {
                         MovieEntry._ID + " INTEGER PRIMARY KEY," + TEXT_TYPE + COMMA_SEP +
                         MovieEntry.COLUMN_NAME_TITLE + TEXT_TYPE + COMMA_SEP + " )";
 
-        private static final String SQL_DELETE_ENTRIES = "DROP TABLE IF EXISTS " + MovieEntry.TABLE_NAME;
+        public static final String SQL_DELETE_ENTRIES = "DROP TABLE IF EXISTS " + MovieEntry.TABLE_NAME;
 
         public static String getSqlCreateEntries() {
             return SQL_CREATE_ENTRIES;

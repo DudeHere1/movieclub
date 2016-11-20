@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.michaelvescovo.movieclub.model.Movie;
+import com.michaelvescovo.movieclub.model.interfaces.Movie;
 
 import org.w3c.dom.Text;
 
@@ -37,7 +37,7 @@ public class MovieAdapter extends ArrayAdapter {
         TextView textView;
       //  if (convertView == null) {
             textView = new TextView(getContext());
-            textView.setText(((Movie) getItem(position)).testMethod());
+//            textView.setText(((Movie) getItem(position)).testMethod());
       //  } else {
          //   textView = (TextView) convertView;
         //}
