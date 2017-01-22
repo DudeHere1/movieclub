@@ -13,7 +13,7 @@ Android Studio was used to build the app and is recommended.
 
 # Issues
 
-Unfortunately I seem to have misplaced the latest version of this project. I was new to Git at the time and I thought the new version was here when I deleted other local versions. However you can see some screenshots of what it looks like when working here: [https://mvescovo.github.io](https://mvescovo.github.io) (for the time being).
+Unfortunately I seem to have misplaced the latest version of this project. I was new to Git at the time and I thought the new version was here when I deleted other local versions.
 
 # Licence
 
