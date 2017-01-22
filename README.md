@@ -4,6 +4,10 @@ An Android app to search movies and arrange movie parties. Once a movie is found
 
 Uses the OMDb API, Volley, SQLite, Fragments, and Connectivity Manager for offline mode.
 
+# Screenshots
+<img src="(https://cloud.githubusercontent.com/assets/15829736/22180091/2b1a5956-e0ba-11e6-8b3c-135b059ef3f0.png" height="500" width="281">
+<img src="https://cloud.githubusercontent.com/assets/15829736/22180094/303ca63c-e0ba-11e6-88a7-9f43c1be9542.png" height="375" width="500">
+
 # Install
 Android Studio was used to build the app and is recommended.
 
